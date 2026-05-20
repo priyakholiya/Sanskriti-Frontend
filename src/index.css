@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&display=swap');
+
+:root {
+  /* Core Colors */
+  --bg-ivory: #FAF8F5;
+  --text-charcoal: #1A1A1A;
+  
+  /* Accents */
+  --sindoor-red: #9E1B1B;
+  --muted-gold: #D4AF37;
+  --mehendi-green: #1B3A24;
+  --border-gold: rgba(212, 175, 55, 0.4);
+  --border-light: rgba(26, 26, 26, 0.1);
+  
+  --nav-height: 90px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lora', serif;
+  background-color: var(--bg-ivory);
+  color: var(--text-charcoal);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+button {
+  font-family: 'Lora', serif;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* ===============================================
+   TYPOGRAPHY
+   =============================================== */
+
+.mega-title {
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.gold-caption {
+  font-family: 'Lora', serif;
+  color: var(--muted-gold);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* ===============================================
+   UI COMPONENTS
+   =============================================== */
+
+.btn-primary {
+  display: inline-block;
+  padding: 16px 40px;
+  background-color: var(--sindoor-red);
+  color: #fff;
+  font-family: 'Lora', serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background-color 0.4s ease;
+  border: 1px solid var(--sindoor-red);
+  text-align: center;
+}
+
+.btn-primary:hover {
+  background-color: #7A1212;
+  border-color: #7A1212;
+  opacity: 1; /* override anchor hover */
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 16px 40px;
+  background-color: transparent;
+  color: var(--text-charcoal);
+  font-family: 'Lora', serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--text-charcoal);
+  transition: all 0.4s ease;
+  text-align: center;
+}
+
+.btn-outline:hover {
+  background-color: var(--text-charcoal);
+  color: var(--bg-ivory);
+  opacity: 1;
+}
+
+/* ===============================================
+   ARCHITECTURAL MOTIFS (The "Arches")
+   =============================================== */
+
+.arch-container {
+  overflow: hidden;
+  border-radius: 200px 200px 0 0;
+  position: relative;
+}
+
+.arch-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.arch-container:hover img {
+  transform: scale(1.05);
+}
+
+.gold-border {
+  border: 1px solid var(--border-gold);
+}
+
+/* ===============================================
+   ANIMATIONS
+   =============================================== */
+
+.fade-in {
+  animation: fadeIn 1.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
