@@ -96,21 +96,3 @@ Sanskriti-Frontend/
 ├── vite.config.js          # Vite config
 └── package.json            # Scripts & project manifest
 ```
-
----
-
-## 🌍 Vercel Deployment
-
-This project uses client-side routing via React Router. When deployed on Vercel, requests to direct paths (like `/admin` or `/checkout`) require fallback rewriting to `index.html` to avoid `404: NOT_FOUND` errors. 
-
-This is configured in `vercel.json` at the root of the project:
-```json
-{
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ]
-}
-```
